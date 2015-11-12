@@ -1,2 +1,16 @@
-# d2-json
-[Work in progress] D2 dev-tools command line utility to export KV files of your mod into readable JSON. It can be used to export data to a webpage ;)
+# Dependencies
+- [steamodd](http://steamodd.readthedocs.org/en/latest/vdf.html): ``pip install steamodd``
+
+# Testing
+I'm currenltly testing with [NWU D2 mod](https://github.com/muZk/NWU_Reborn)
+
+```sh
+mkdir test
+cd test
+git clone https://github.com/muZk/NWU_Reborn.git
+```
+
+I'll use only the necesary files in the future. At the moment I'm not sure which one I'm going to need.
+
+# TODO
+- Everything :D
