@@ -1,0 +1,786 @@
+{
+    "npc_dota_hero_antimage": {
+        "abilities": {
+            "1": {
+                "cooldown": "21.0 18.0 15.0 12.0", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": null, 
+                "mana_cost": "60 60 60 60", 
+                "name": null, 
+                "texture_name": null
+            }, 
+            "2": {
+                "cooldown": null, 
+                "damage": "120 190 260 330", 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": null, 
+                "name": null, 
+                "texture_name": "antimage_spell_shield"
+            }, 
+            "3": {
+                "cooldown": null, 
+                "damage": null, 
+                "damage_type": "", 
+                "description": null, 
+                "mana_cost": null, 
+                "name": null, 
+                "texture_name": null
+            }, 
+            "4": {
+                "cooldown": null, 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": null, 
+                "name": null, 
+                "texture_name": null
+            }
+        }, 
+        "agi": "22", 
+        "agi_gain": "2.75", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "16", 
+        "int_gain": "1.6", 
+        "lore": "", 
+        "movement_speed": "300", 
+        "name": "Itachi", 
+        "primary_attribute": null, 
+        "str": "20", 
+        "str_gain": "1.35", 
+        "village": "konoha_scarred"
+    }, 
+    "npc_dota_hero_axe": {
+        "abilities": {
+            "1": {
+                "cooldown": "12", 
+                "damage": "75 150 225 300", 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "75 75 75 75", 
+                "name": "Kaiten", 
+                "texture_name": "neji_kaiten"
+            }, 
+            "2": {
+                "cooldown": "20 20 20 20", 
+                "damage": "100 150 200 250", 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "60 75 90 105", 
+                "name": "Internal Bleeding", 
+                "texture_name": "neji_internal_bleeding"
+            }, 
+            "3": {
+                "cooldown": "20", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "60 60 60 60", 
+                "name": "Byakugan", 
+                "texture_name": "neji_byakugan"
+            }, 
+            "4": {
+                "cooldown": "120.0 100.0 80.0", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "150 200 250", 
+                "name": "Hakke Hyaku Nijuuhachi Shou", 
+                "texture_name": "neji_hyaku_nijuuhachi_shou"
+            }
+        }, 
+        "agi": "21", 
+        "agi_gain": "1.5", 
+        "attack_range": "128", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "23", 
+        "int_gain": "2.4", 
+        "lore": null, 
+        "movement_speed": "300", 
+        "name": "Neji", 
+        "primary_attribute": "agi", 
+        "str": "18", 
+        "str_gain": "1.8", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_beastmaster": {
+        "abilities": {
+            "1": {
+                "cooldown": "15", 
+                "damage": "25 50 75 100", 
+                "damage_type": "magical", 
+                "description": "Earth Style: Earth Tracking Fangs Jutsu. Kakashi summons a ninja dog with the help of a ninja scroll, the dog pins the target to the ground, immobilizing and dealing damage.", 
+                "mana_cost": "110 120 130 140", 
+                "name": "Doton: Tsuiga No Jutsu", 
+                "texture_name": "kakashi_doton"
+            }, 
+            "2": {
+                "cooldown": "15", 
+                "damage": "25 50 75 100", 
+                "damage_type": "magical", 
+                "description": "Kakashi is known worldwide as 'The Copy Ninja Kakashi'. Using his sharingan Kakashi can copy one jutsu (The second skill, generally) from enemies or allies. Lasts for 120 seconds. You can type -sharingan to see your remaining time.", 
+                "mana_cost": "110 120 130 140", 
+                "name": "Sharingan", 
+                "texture_name": "kakashi_sharingan"
+            }, 
+            "3": {
+                "cooldown": "30", 
+                "damage": null, 
+                "damage_type": "physical", 
+                "description": "Shadow clone jutsu. Kakashi creates a shadow clone of himself, granting it a portion of his chakra, making it seem like its the real Kakashi, Kakashi vanishes for a few seconds in order to escape.", 
+                "mana_cost": "150 120 90 60", 
+                "name": "Kage Bunshi No Jutsu", 
+                "texture_name": "kakashi_bunshin"
+            }, 
+            "4": {
+                "cooldown": "1 45", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Kakashi channels a large amount of lightning chakra in his hand, the amount of chakra is so great that it becomes visible, once the technique is complete, Kakashi charges his target and thrusts the chidori into the target, dealing damage.", 
+                "mana_cost": "95 115 125 135", 
+                "name": "Chidori", 
+                "texture_name": "kakashi_chidori"
+            }, 
+            "5": null
+        }, 
+        "agi": "18", 
+        "agi_gain": "2.0", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "17", 
+        "int_gain": "1.8", 
+        "lore": "", 
+        "movement_speed": "305", 
+        "name": "Kakashi", 
+        "primary_attribute": "str", 
+        "str": "22", 
+        "str_gain": "2.9", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_bloodseeker": {
+        "abilities": {
+            "1": {
+                "cooldown": "20 15 10 5", 
+                "damage": "100 150 200 250", 
+                "damage_type": "physical", 
+                "description": "Zabuza is known to be a great 'silent killer'. His ability to go in or out of battle withount been detected makes him very dangerous. Cast range improves per level.", 
+                "mana_cost": "60", 
+                "name": "Stealth", 
+                "texture_name": "zabuza_stealth"
+            }, 
+            "2": {
+                "cooldown": "25", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": "Ninja Art: Hidden Mist Jutsu. This move uses water to create a thick heavy mist. The mist is so thick, that enemies won't be able to target correctly. Last for 7 seconds.", 
+                "mana_cost": "150 175 200", 
+                "name": "Ninpou: Kirigakure No Jutsu", 
+                "texture_name": "zabuza_kirigakure_no_jutsu"
+            }, 
+            "3": {
+                "cooldown": "8", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": "Zabuza studies his enemies defences. It will take him 8 seconds to find a weak spot in an enemies defence, with every hit dealt, Zabuza will look for his opponents weak spot, which reduces the time it takes to find a weak spot by 1 second.", 
+                "mana_cost": null, 
+                "name": "Weak Spot", 
+                "texture_name": "zabuza_weak_spot"
+            }, 
+            "4": {
+                "cooldown": "10.0 7.0 5.0", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": "Tracks an enemy hero for 30 seconds or until it dies. Gives vision of the target and reduces his armor, Zabuza and his allies will move faster if they are close to the target. If the target dies, Zabuza gets bonus gold.", 
+                "mana_cost": "50", 
+                "name": "Track", 
+                "texture_name": "zabuza_track"
+            }
+        }, 
+        "agi": "23", 
+        "agi_gain": "3.1", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "15", 
+        "int_gain": "1.4", 
+        "lore": "", 
+        "movement_speed": "300", 
+        "name": "Zabuza", 
+        "primary_attribute": "agi", 
+        "str": "17", 
+        "str_gain": "2", 
+        "village": "kirigakure"
+    }, 
+    "npc_dota_hero_centaur": {
+        "abilities": {
+            "1": {
+                "cooldown": "30 24 18 12", 
+                "damage": "60 80 100 120", 
+                "damage_type": "magical", 
+                "description": "Guy's signature move. A spinning kick in the air, which propels the user forward. Dealing damage to the target and gives the target a hard time to aim. Last for 10 seconds.", 
+                "mana_cost": "70", 
+                "name": "Dynamic Entry", 
+                "texture_name": "guy_dynamic_entry"
+            }, 
+            "2": {
+                "cooldown": "0", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Burn with the flame of youth'. Every attack motivates Guy, guiding each strike with greater ease than the last. Increases attack speed with every successfully hit to a maximum of 100%. If Guy changes targets, his speed drops to half of where it was.", 
+                "mana_cost": "0", 
+                "name": "Power of Youth", 
+                "texture_name": "guy_power_of_youth"
+            }, 
+            "3": {
+                "cooldown": "0", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Strong Fist is Guy's and Lee's characteristic fighting style, the purpose of which is to cause external damage and break bones.", 
+                "mana_cost": "0", 
+                "name": "Gouken Mastery", 
+                "texture_name": "guy_gouken_mastery"
+            }, 
+            "4": {
+                "cooldown": "90", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": "Maito Guy opens the six Celestial Gates, which gives him access to an enormous amount of chakra, granting him a burst of power and speed, when the effect wears off it has the reverse effect.", 
+                "mana_cost": "125 90 175", 
+                "name": "Dairoku Keimon", 
+                "texture_name": "guy_open_gates"
+            }
+        }, 
+        "agi": "21", 
+        "agi_gain": "2.9", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "13", 
+        "int_gain": "1.15", 
+        "lore": "", 
+        "movement_speed": "300", 
+        "name": "Guy", 
+        "primary_attribute": "agi", 
+        "str": "19", 
+        "str_gain": "2.2", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_doom_bringer": {
+        "abilities": {
+            "1": {
+                "cooldown": "19 16 13 10", 
+                "damage": "70 100 130 160", 
+                "damage_type": "magical", 
+                "description": "Hidan throws his scythe at the target point and then rips it back, pulling any enemy units within a cone directly in front of him.  Enemies hit by this ability are mini stunned and will take physical damage as they are pulled directly in front of Hidan. Damage done to creeps by this ability is doubled. Cull the Weak costs health from Hidan if any enemy units are hit, but will lose no health if enemies are not affected.", 
+                "mana_cost": "0", 
+                "name": "Cull the Weak", 
+                "texture_name": "hidan_cull_the_weak"
+            }, 
+            "2": {
+                "cooldown": "21 18 15 12", 
+                "damage": "0 0 0 0", 
+                "damage_type": "", 
+                "description": "Hidan taunts his opponents with a number of profanities, forcing nearby enemies to focus their attacks on him. Each basic attack made against Hidan during this time will grant him additional strength for a moderate duration.  ", 
+                "mana_cost": "90 95 100 105", 
+                "name": "Taunt", 
+                "texture_name": "hidan_taunt"
+            }, 
+            "3": {
+                "cooldown": "60 40 25 15", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Upon taking fatal damage, Hidan health is restored to a certain percentage of his maximum HP.", 
+                "mana_cost": "0", 
+                "name": "Jashin's Blessing", 
+                "texture_name": "hidan_jashins_blessing"
+            }, 
+            "4": {
+                "cooldown": "110.0", 
+                "damage": "40 64 88", 
+                "damage_type": "magical", 
+                "description": "Passively grants the ability to acquire blood from the last hero Hidan has attacked. Upon activation, Hidan instantly creates a large symbol on the ground while taking a dark new appearance. While in this form, enemy Heroes whose blood Hidan currently possesses are cursed to take the same amount of damage as Hidan as long as Hidan remains within the symbol. If Hidan moves outside the circle, damage will still be returned to the target but at a reduced percentage. Also gives the ability to inflict Self Pain.", 
+                "mana_cost": "50", 
+                "name": "Death Possession Blood", 
+                "texture_name": "hidan_death_possession_blood"
+            }, 
+            "5": null, 
+            "6": null
+        }, 
+        "agi": "15", 
+        "agi_gain": "1.1", 
+        "attack_range": "275", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "17", 
+        "int_gain": "1.4", 
+        "lore": "The only true immortal known in the shinobi world, Hidan is a ruthless worshipper of Jashin and a member of Akatsuki. Through experimenting with the various techniques of his religion, Hidan has gained the ability to survive any injury. Even if he is decapitated Hidan will still survive, although he cannot control the rest of his body. Despite being a religious man Hidan is known to be an extremely disrespectful shinobi. He constantly complains and swears to his allies, including his superiors. The only respect he ever gives is to his god whom he works to fulfil his commandments. His insistence on following his religion\u2019s laws often brings him into conflict with his partner Kakuzu. Since he is unable to be killed by any attack, Hidan and Kakuzu were a perfect team as Kakuzu\u2019s rage could never kill the immortal. His extreme durability and raw strength are what allowed him to become a valued member of Akatsuki.", 
+        "movement_speed": "290", 
+        "name": "Hidan", 
+        "primary_attribute": "str", 
+        "str": "27", 
+        "str_gain": "3.1", 
+        "village": "yugakure_scarred"
+    }, 
+    "npc_dota_hero_dragon_knight": {
+        "abilities": {
+            "1": {
+                "cooldown": "8", 
+                "damage": "50 70 90 110", 
+                "damage_type": "magical", 
+                "description": "By combining two of his techniques, Naruto creates a shadow clone that charges the enemy target, and hits him with a rasengan. the rasengan doesnt do as much damage as a real one, but is enough to slow the enemies movements for a few seconds. The shadow clone lasts for 20 seconds.", 
+                "mana_cost": "80 100 120 140", 
+                "name": "Kage Bunshin Rasengan", 
+                "texture_name": "naruto_kage_bunshin_rasengan"
+            }, 
+            "2": {
+                "cooldown": "10", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Frog Kata is a fighting style used exclusively by those who have mastered Sage Mode. The senjutsu chakra used during Sage Mode activates the body in various ways, enhancing the user's speed, strength, and stamina. During this move Naruto summons a clone to help him fight. Clone last for 20 seconds. Frog Kata last for 5 seconds.", 
+                "mana_cost": "75", 
+                "name": "Kawazu Kumite", 
+                "texture_name": "naruto_kawazu_kumite"
+            }, 
+            "3": {
+                "cooldown": "5", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "After many years of training, Naruto has been able to master Kage Bunshin No Jutsu to its full potential, combining this jutsu with almost all of his techniques, Naruto can summon a maximun of 3 clones in sage mode without losing his sage chakra. Increases the resistance and damage of the clones, and allows naruto to swap places with any of his clones in a 600 AOE. Can summon a maximun of 3 clones.", 
+                "mana_cost": "50", 
+                "name": "Kage Bunshin Mastery", 
+                "texture_name": "naruto_kage_bunshin_mastery"
+            }, 
+            "4": {
+                "cooldown": "13.0", 
+                "damage": "175 225 300", 
+                "damage_type": "magical", 
+                "description": "Naruto's most powerful attack. By manipulating the wind chakra of the Wind Release: Rasengan, Naruto is able to mold the chakra in the form of a giant fuma shuriken, with the Rasengan in the center remaining a perfect sphere. Stuns for 3 seconds in a 300 AOE.", 
+                "mana_cost": "140", 
+                "name": "Rasenshuriken", 
+                "texture_name": "naruto_rasenshuriken"
+            }
+        }, 
+        "agi": "17", 
+        "agi_gain": "2.4", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "15", 
+        "int_gain": "1.3", 
+        "lore": "", 
+        "movement_speed": "305", 
+        "name": "Naruto", 
+        "primary_attribute": null, 
+        "str": "21", 
+        "str_gain": "2.7", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_earthshaker": {
+        "abilities": {}, 
+        "agi": null, 
+        "agi_gain": null, 
+        "attack_range": null, 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": null, 
+        "int_gain": null, 
+        "lore": null, 
+        "movement_speed": null, 
+        "name": "Jiroubo", 
+        "primary_attribute": null, 
+        "str": null, 
+        "str_gain": null, 
+        "village": "otogakure"
+    }, 
+    "npc_dota_hero_juggernaut": {
+        "abilities": {
+            "1": {
+                "cooldown": "36", 
+                "damage": null, 
+                "damage_type": "physical", 
+                "description": null, 
+                "mana_cost": "0", 
+                "name": null, 
+                "texture_name": "yondaime_dash_strike"
+            }
+        }, 
+        "agi": "21", 
+        "agi_gain": "2.5", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "14", 
+        "int_gain": "1.6", 
+        "lore": null, 
+        "movement_speed": "295", 
+        "name": null, 
+        "primary_attribute": "agi", 
+        "str": "17", 
+        "str_gain": "1.9", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_kunkka": {
+        "abilities": {
+            "1": {
+                "cooldown": "12.0 12.0 12.0 12.0", 
+                "damage": "110 150 190 230", 
+                "damage_type": "magical", 
+                "description": "Active: Through shaping water into the form of a large shark, Kisame sends a wave to a target location. The shark bullet deals magical damage, reduces armor, and slows enemies it contacts.", 
+                "mana_cost": "120 120 120 120", 
+                "name": "Water Shark Bullet Technique", 
+                "texture_name": "kisame_suikodan_no_jutsu"
+            }, 
+            "2": {
+                "cooldown": "27.0 24.0 21.0 18.0", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Active: Kisame creates clones out of water to command in battle. Kisame splits into the clones and is placed randomly amongst them. Water clones deal very little damage and take additional incoming damage. They both possess Water Prison Technique as well as a passive Samehada. Clone abilities level up with Water Clone Technique.", 
+                "mana_cost": "135 140 145 150", 
+                "name": "Water Clone Technique", 
+                "texture_name": "kisame_mizu_bunshin_no_jutsu"
+            }, 
+            "3": {
+                "cooldown": "10 10 10 10", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Passive: Samehada - The great sword Samehada shaves off enemy chakra when it connects. Kisame\u2019s next basic attack will steal mana from the target based upon their maximum mana pool.", 
+                "mana_cost": "0", 
+                "name": "Samehada", 
+                "texture_name": "kisame_samehada"
+            }, 
+            "4": {
+                "cooldown": "50.0", 
+                "damage": "40 64 88", 
+                "damage_type": "", 
+                "description": "After fusing with Samehada, Kisame transforms into a shark like creature while creating a large dome of water. Kisame acts as the center of the dome as it follows along with his movement. Enemy units caught within the dome will take magic damage over time and are slowed. Throughout the duration of the transformation, Kisame gains bonus health regeneration. If Kisame runs out of chakra the transformation ends.", 
+                "mana_cost": "50", 
+                "name": "Water Prison", 
+                "texture_name": "kisame_water_prison"
+            }
+        }, 
+        "agi": "16", 
+        "agi_gain": "1.7", 
+        "attack_range": "128", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "19", 
+        "int_gain": "1.9", 
+        "lore": "Feared as the Monster of the Hidden Mist, Hoshigaki Kisame is a dangerous S-Rank missing nin and one of the Seven Ninja Swordsmen of the Mist. He loves to fight and is often aggressive towards anyone he meets. Despite this Kisame has shown to be very loyal to his allies unless they endanger the mission. He bears the great sword Samehada (Shark Skin) and uses it to shave his enemies and drain their chakra. Kisame has an abundance of chakra that is said to almost match a tailed beast. It is from this great source of power that he gets the title The Tailed Beast without a Tail. Regarded as one of the most powerful shinobi to ever come out of Kirigakure (Village of the Hidden Mist), he earned membership into Akatsuki through his own strength. ", 
+        "movement_speed": "315", 
+        "name": "Kisame", 
+        "primary_attribute": "str", 
+        "str": "22", 
+        "str_gain": "2.8", 
+        "village": "kirigakure_scarred"
+    }, 
+    "npc_dota_hero_lion": {
+        "abilities": {
+            "1": {
+                "cooldown": "20 20 20 20", 
+                "damage": "100 150 200 250", 
+                "damage_type": "magical", 
+                "description": "Sand Coffin. Gaara encases his target in his chakra-infused sand, crushing and immobilizing the victim. Holds for 2.8 seconds.", 
+                "mana_cost": "100 115 130 145", 
+                "name": "Sabaku Kyuu", 
+                "texture_name": "gaara_sabaku_kyuu"
+            }, 
+            "2": {
+                "cooldown": "10 10 10 10", 
+                "damage": "100 170 240 300", 
+                "damage_type": "magical", 
+                "description": "Sand Tsunami. Gaara creates a massive amount of sand in the form of a wave, covering and drowning the opponent in an ocean of sand. Stuns for 1 second.", 
+                "mana_cost": "105 120 135 150", 
+                "name": "Ryuusa Bakuryu", 
+                "texture_name": "gaara_ryuusa_bakuryu"
+            }, 
+            "3": {
+                "cooldown": "5.0", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": "Sand Armor. Gaara covers himself in sand, which acts as an extra set of armor, defending himself from harm. Absorbs 35% of the incoming damage.", 
+                "mana_cost": null, 
+                "name": "Suna no Yoroi", 
+                "texture_name": "gaara_suna_no_yoroi"
+            }, 
+            "4": {
+                "cooldown": "130 100 70", 
+                "damage": "300 450 600", 
+                "damage_type": "magical", 
+                "description": "Sand Burial. Makes the ground tremble and break, creating a desert in a large area ahead of Gaara, casting time 1 second.", 
+                "mana_cost": "175 250 350", 
+                "name": "Sabaku Taiso", 
+                "texture_name": "gaara_sabaku_taiso"
+            }
+        }, 
+        "agi": "14", 
+        "agi_gain": "1", 
+        "attack_range": "600", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "24", 
+        "int_gain": "3.25", 
+        "lore": "", 
+        "movement_speed": "290", 
+        "name": "Gaara", 
+        "primary_attribute": null, 
+        "str": "18", 
+        "str_gain": "1.6", 
+        "village": "sunagakure"
+    }, 
+    "npc_dota_hero_ogre_magi": {
+        "abilities": {
+            "1": {
+                "cooldown": "15.0", 
+                "damage": "60 85 110 135", 
+                "damage_type": "magical", 
+                "description": "Sends out a wave of fire that travels a target point pushing all enemies hit towards the target point while dealing magic damage. Upon reaching maximum distance, the fire wave will explode, dealing magic damage and stunning all enemy units within the area.  Any trees touched by this ability will burn if Wood Release: Deep Forest Emergence is leveled.", 
+                "mana_cost": "110 120 130 140", 
+                "name": "Great Fire Annihilation", 
+                "texture_name": "madara_fire_release"
+            }, 
+            "2": {
+                "cooldown": "15 14 13 12", 
+                "damage": "100 170 240 300", 
+                "damage_type": "magical", 
+                "description": "Creates a large number of trees that circle around a target area for a short period time. This ability also allows Madara to set trees on fire when affected by his other abilities. Trees that have been lit on fire can be passed through, but will burn nearby enemies causing them to be slowed take magic damage per second. Burn effect will persist for a short period of time after an enemy leaves the radius of burning trees.", 
+                "mana_cost": "110", 
+                "name": "Deep Forest Emergence", 
+                "texture_name": "madara_wood_release"
+            }, 
+            "3": {
+                "cooldown": "2.0", 
+                "damage": "35 50 65 80", 
+                "damage_type": "", 
+                "description": "Upon activation, grants magic resistance and burns nearby enemies while draining the user\u2019s mana. Using this ability again will deactivate it and stop mana from draining. Trees within the radius of the burn will be lit on fire if Wood Release: Deep Forest Emergence is leveled. If Madara runs out of mana, the effect will end.", 
+                "mana_cost": "50", 
+                "name": "Susano\u2019o Ribcage", 
+                "texture_name": "madara_susano"
+            }, 
+            "4": {
+                "cooldown": "160", 
+                "damage": "400 525 650", 
+                "damage_type": "magical", 
+                "description": "Summons a gigantic meteor that will crash onto a target area if the channelling is complete. While channelling, a large shadow will shroud the area that is visible to both teams. The meteor will cause large amounts of magical damage and stun all enemies upon impact. All trees hit by the impact will be set on fire if Deep Forest Emergence is leveled. This ability will give no effect if it is cancelled.", 
+                "mana_cost": "200 250 300", 
+                "name": "Heaven Concealed", 
+                "texture_name": "madara_meteor"
+            }, 
+            "5": null
+        }, 
+        "agi": "15", 
+        "agi_gain": "1.6", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "19", 
+        "int_gain": "2.4", 
+        "lore": "Widely considered to be the strongest Uchiha to have ever lived, Uchiha Madara is a legendary shinobi who was the leader of his clan before he became a co-founder of Konohagakure. Madara was the first of his clan to gain the Eternal Mangekyo Sharingan after inheriting his brother\u2019s eyes. This newfound power elevated him to the top of the Uchiha hierarchy where he constantly waged war with their rival clan, the Senju. After being defeated in battle, Madara agreed to an alliance proposed by Hashirama to unite as a single ninja village. However, his rivalry with his lifelong rival Hashirama Senju did not end after their agreement to ally under Konoha and it soon led to a deathmatch between the two legendary shinobi at the Valley of the End. Although Madara had lost the battle for Konoha, he had survived and managed to acquire some of Hashirama\u2019s DNA. Filled with new purpose, Madara began preparations for his Eye of the Moon plan which would set the entire ninja world under an eternal genjutsu.", 
+        "movement_speed": "310", 
+        "name": "Madara", 
+        "primary_attribute": null, 
+        "str": "22", 
+        "str_gain": "2.0", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_phantom_assassin": {
+        "abilities": {
+            "1": {
+                "cooldown": "15 15 15 15", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": "Sakura gathers chakra into her fist and slams the ground beneath her, rupturing the earth, damaging and stunning nearby enemies. Stuns for 2 seconds.", 
+                "mana_cost": "140", 
+                "name": "Earth Slam", 
+                "texture_name": "sakura_earth_slam"
+            }, 
+            "2": {
+                "cooldown": "30 25 20 15", 
+                "damage": "35 50 65 80", 
+                "damage_type": "", 
+                "description": "By gathering chakra in her legs, Sakura increases her movespeed to the maximum.", 
+                "mana_cost": "25", 
+                "name": "Chakra Burst", 
+                "texture_name": "sakura_chakra_burst"
+            }, 
+            "3": {
+                "cooldown": "0", 
+                "damage": null, 
+                "damage_type": "physical", 
+                "description": "By having excellent chakra control, Sakura can increase her strenght to deliver powerful punches. Gives a 15% Chance to push back enemies.", 
+                "mana_cost": "0", 
+                "name": "Chakra Enhanced Strength", 
+                "texture_name": "sakura_chakra_enhanced_strength"
+            }, 
+            "4": {
+                "cooldown": "80.0 80.0 80.0", 
+                "damage": null, 
+                "damage_type": "", 
+                "description": "Sakura unleashes her inner self, which can be described as her 'true' personality. Her inner self gives her a strong sense of mind, and overwhelming physical strength. During this time, she is near 'unbeatable'. Last for 20 seconds.", 
+                "mana_cost": "100 150 200", 
+                "name": "Inner Sakura", 
+                "texture_name": "sakura_inner_sakura"
+            }
+        }, 
+        "agi": "21", 
+        "agi_gain": "2", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "14", 
+        "int_gain": "1.3", 
+        "lore": "", 
+        "movement_speed": "310", 
+        "name": "Sakura", 
+        "primary_attribute": "str", 
+        "str": "22", 
+        "str_gain": "2.75", 
+        "village": "konoha"
+    }, 
+    "npc_dota_hero_sand_king": {
+        "abilities": {
+            "1": {
+                "cooldown": "20", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "75 80 85 90", 
+                "name": "Raiton no Yoroi", 
+                "texture_name": "raikage_raiton_no_yoroi"
+            }, 
+            "2": {
+                "cooldown": "15", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "0", 
+                "name": "Raigyaku Suihei", 
+                "texture_name": "raikage_raigyaku_suihei"
+            }, 
+            "3": {
+                "cooldown": "15.0", 
+                "damage": null, 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "95 115 125 135", 
+                "name": "Lariat", 
+                "texture_name": "raikage_lariat"
+            }, 
+            "4": {
+                "cooldown": "90 80 70", 
+                "damage": "150 225 300", 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "110 120 130", 
+                "name": "Raiga no Bomu", 
+                "texture_name": "raikage_raiga_no_bomu"
+            }
+        }, 
+        "agi": "16", 
+        "agi_gain": "1.3", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "18", 
+        "int_gain": "1.85", 
+        "lore": null, 
+        "movement_speed": "300", 
+        "name": "Raikage", 
+        "primary_attribute": "str", 
+        "str": "21", 
+        "str_gain": "2.6", 
+        "village": "kumogakure"
+    }, 
+    "npc_dota_hero_storm_spirit": {
+        "abilities": {}, 
+        "agi": "16", 
+        "agi_gain": "2.1", 
+        "attack_range": "100", 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": "21", 
+        "int_gain": "2.9", 
+        "lore": null, 
+        "movement_speed": "310", 
+        "name": "Sasuke", 
+        "primary_attribute": null, 
+        "str": "19", 
+        "str_gain": "1.75", 
+        "village": "konoha_scarred"
+    }, 
+    "npc_dota_hero_sven": {
+        "abilities": {
+            "1": {
+                "cooldown": "25 22 19 16", 
+                "damage": "120 170 220 270", 
+                "damage_type": "magical", 
+                "description": null, 
+                "mana_cost": "75 100 125 150", 
+                "name": "Jinton: Genkai Hakuri no Jutsu", 
+                "texture_name": "onoki_jinton"
+            }, 
+            "2": {
+                "cooldown": "20", 
+                "damage": null, 
+                "damage_type": "pure", 
+                "description": null, 
+                "mana_cost": "100", 
+                "name": "Stalagmite Armor", 
+                "texture_name": "onoki_stalagmite_armor"
+            }, 
+            "3": {
+                "cooldown": null, 
+                "damage": null, 
+                "damage_type": "", 
+                "description": null, 
+                "mana_cost": null, 
+                "name": "Turn to Dust", 
+                "texture_name": "onoki_turn_to_dust"
+            }, 
+            "4": {
+                "cooldown": "2 80 70", 
+                "damage": null, 
+                "damage_type": "pure", 
+                "description": null, 
+                "mana_cost": "175 250 325", 
+                "name": "Doton: Kajugan no Jutsu", 
+                "texture_name": "onoki_kajutan_no_jutsu"
+            }
+        }, 
+        "agi": null, 
+        "agi_gain": null, 
+        "attack_range": null, 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": null, 
+        "int_gain": null, 
+        "lore": null, 
+        "movement_speed": null, 
+        "name": "Onoki", 
+        "primary_attribute": "str", 
+        "str": null, 
+        "str_gain": null, 
+        "village": "iwagakure"
+    }, 
+    "npc_dota_hero_windrunner": {
+        "abilities": {}, 
+        "agi": null, 
+        "agi_gain": null, 
+        "attack_range": null, 
+        "damage_max": null, 
+        "damage_min": null, 
+        "int": null, 
+        "int_gain": null, 
+        "lore": null, 
+        "movement_speed": null, 
+        "name": "Kidoumaru", 
+        "primary_attribute": null, 
+        "str": null, 
+        "str_gain": null, 
+        "village": "otogakure"
+    }
+}
