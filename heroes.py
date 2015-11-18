@@ -1,3 +1,4 @@
+import i18n
 from utils import camelcase
 from abilities import Ability
 
@@ -12,7 +13,7 @@ class Hero(object):
 	def __init__(self, heroes, abilities, language, include = []):
 		self.heroes = heroes['DOTAHeroes']
 		self.abilities = abilities['DOTAAbilities']
-		self.language = language['lang']['Tokens']
+		self.language = language['lang']['Language']
 		self.include = include
 
 	def default(self, key, attr):
@@ -20,8 +21,8 @@ class Hero(object):
 
 	def parse_hero(self, key):
 		hero = {
-			'name': self.language.get(key),
-			'lore': self.language.get('%s_lore' % key),
+			'name': i18n.t(key, self.language),
+			'lore': i18n.t('%s_lore' % key, self.language),
 			'primary_attribute': attribute_constants.get(self.default(key, 'AttributePrimary')),
 			'str': self.default(key, 'AttributeBaseStrength'),
 			'agi': self.default(key, 'AttributeBaseAgility'),
@@ -47,7 +48,9 @@ class Hero(object):
 		return hero
 
 	def parse(self):
-		heroes = {}
+		parsed = {}
+		parsed['Heroes'] = {}
+		parsed['Language'] = self.language 
 		for hero_key, value in self.heroes.iteritems():
-			heroes[hero_key] = self.parse_hero(hero_key)
-		return heroes
+			parsed['Heroes'][hero_key] = self.parse_hero(hero_key)
+		return parsed

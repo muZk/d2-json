@@ -30,4 +30,4 @@ pp.pprint(hero.parse())
 
 # Export JSON
 with open('heroes.json', 'w') as outfile:
-    json.dump(hero.parse(), outfile, sort_keys = True, indent = 4)
+	json.dump(hero.parse(), outfile, sort_keys = True, indent = 4)

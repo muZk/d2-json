@@ -177,15 +177,15 @@ class Ability:
 	def parse_ability(self, key):
 		if key in self.abilities:
 			ability = {
-				'name': self.language.get('DOTA_Tooltip_ability_%s' % key),
-				'description': self.language.get('DOTA_Tooltip_ability_%s_description' % key),
-				'damage_type': self.default(key, 'AbilityUnitDamageType', '').replace('DAMAGE_TYPE_', '').lower(),
+				'name': i18n.t('DOTA_Tooltip_ability_%s' % key),
+				'description': i18n.t('DOTA_Tooltip_ability_%s_description' % key),
+				'damage_type': self.damage_type(key),
+				'behavior': self.behavior(key),
+				'affects': self.affects(key),
 				'cooldown': self.default(key, 'AbilityCooldown'),
 				'damage': self.default(key, 'AbilityDamage'),
 				'mana_cost': self.default(key, 'AbilityManaCost'),
 				'texture_name': self.default(key, 'AbilityTextureName'),
-				'behavior': self.behavior(key),
-				'affects': self.affects(key),
 				'key': key
 			}
 			if len(self.include) > 0:
@@ -195,10 +195,15 @@ class Ability:
 		else:
 			return None
 
+	def damage_type(self, key):
+		dmg = self.default(key, 'AbilityUnitDamageType', '') # example: DAMAGE_TYPE_PHYSICAL
+		dmg = dmg.replace('DAMAGE_TYPE_', '').title() # value: Physical
+		return i18n.t('DOTA_ToolTip_Damage_%s' % dmg, self.language)
+
 	def affects(self, key):
 		target_type = self.default(key, 'AbilityUnitTargetType')
 		target_team = self.default(key, 'AbilityUnitTargetTeam')
-		return AffectsTooltip(target_team, target_type).tooltip()
+		return AffectsTooltip(target_team, target_type).tooltip(self.language)
 
-	def behavior(self, key, language = 'English'):
-		return BehaviourTooltip(self.default(key, 'AbilityBehavior')).tooltip()
+	def behavior(self, key):
+		return BehaviourTooltip(self.default(key, 'AbilityBehavior')).tooltip(self.language)
