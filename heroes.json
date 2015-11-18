@@ -2,6 +2,7 @@
     "npc_dota_hero_antimage": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "21.0 18.0 15.0 12.0", 
                 "damage": null, 
@@ -10,10 +11,10 @@
                 "key": "itachi_dust_crow_genjustsu", 
                 "mana_cost": "60 60 60 60", 
                 "name": null, 
-                "raw": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_ROOT_DISABLES", 
                 "texture_name": null
             }, 
             "2": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": null, 
                 "damage": "120 190 260 330", 
@@ -22,10 +23,10 @@
                 "key": "itachi_tsukiyomi", 
                 "mana_cost": null, 
                 "name": null, 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "antimage_spell_shield"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": null, 
                 "damage": null, 
@@ -34,10 +35,10 @@
                 "key": "itachi_sharingan", 
                 "mana_cost": null, 
                 "name": null, 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": null
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": null, 
                 "damage": null, 
@@ -46,7 +47,6 @@
                 "key": "itachi_amateratsu", 
                 "mana_cost": null, 
                 "name": null, 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": null
             }
         }, 
@@ -68,6 +68,7 @@
     "npc_dota_hero_axe": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "12", 
                 "damage": "75 150 225 300", 
@@ -76,10 +77,10 @@
                 "key": "neji_kaiten", 
                 "mana_cost": "75 75 75 75", 
                 "name": "Kaiten", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET", 
                 "texture_name": "neji_kaiten"
             }, 
             "2": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "20 20 20 20", 
                 "damage": "100 150 200 250", 
@@ -88,10 +89,10 @@
                 "key": "neji_internal_bleeding", 
                 "mana_cost": "60 75 90 105", 
                 "name": "Internal Bleeding", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "neji_internal_bleeding"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "20", 
                 "damage": null, 
@@ -100,10 +101,10 @@
                 "key": "neji_byakugan", 
                 "mana_cost": "60 60 60 60", 
                 "name": "Byakugan", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "neji_byakugan"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Channeled", 
                 "cooldown": "120.0 100.0 80.0", 
                 "damage": null, 
@@ -112,7 +113,6 @@
                 "key": "neji_hyaku_nijuuhachi_shou", 
                 "mana_cost": "150 200 250", 
                 "name": "Hakke Hyaku Nijuuhachi Shou", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED", 
                 "texture_name": "neji_hyaku_nijuuhachi_shou"
             }
         }, 
@@ -134,6 +134,7 @@
     "npc_dota_hero_beastmaster": {
         "abilities": {
             "1": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "15", 
                 "damage": "25 50 75 100", 
@@ -142,10 +143,10 @@
                 "key": "kakashi_doton", 
                 "mana_cost": "110 120 130 140", 
                 "name": "Doton: Tsuiga No Jutsu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "kakashi_doton"
             }, 
             "2": {
+                "affects": "Enemy Heroes", 
                 "behaviour": "Unit Target", 
                 "cooldown": "15", 
                 "damage": "25 50 75 100", 
@@ -154,10 +155,10 @@
                 "key": "kakashi_sharingan", 
                 "mana_cost": "110 120 130 140", 
                 "name": "Sharingan", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "kakashi_sharingan"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "30", 
                 "damage": null, 
@@ -166,10 +167,10 @@
                 "key": "kakashi_bunshin", 
                 "mana_cost": "150 120 90 60", 
                 "name": "Kage Bunshi No Jutsu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_IGNORE_CHANNEL", 
                 "texture_name": "kakashi_bunshin"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Channeled", 
                 "cooldown": "1 45", 
                 "damage": null, 
@@ -178,7 +179,6 @@
                 "key": "kakashi_chidori", 
                 "mana_cost": "95 115 125 135", 
                 "name": "Chidori", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "kakashi_chidori"
             }, 
             "5": null
@@ -201,6 +201,7 @@
     "npc_dota_hero_bloodseeker": {
         "abilities": {
             "1": {
+                "affects": "Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "20 15 10 5", 
                 "damage": "100 150 200 250", 
@@ -209,10 +210,10 @@
                 "key": "zabuza_stealth", 
                 "mana_cost": "60", 
                 "name": "Stealth", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "zabuza_stealth"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "25", 
                 "damage": null, 
@@ -221,10 +222,10 @@
                 "key": "zabuza_kirigakure_no_jutsu", 
                 "mana_cost": "150 175 200", 
                 "name": "Ninpou: Kirigakure No Jutsu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT", 
                 "texture_name": "zabuza_kirigakure_no_jutsu"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "8", 
                 "damage": null, 
@@ -233,10 +234,10 @@
                 "key": "zabuza_weak_spot", 
                 "mana_cost": null, 
                 "name": "Weak Spot", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "zabuza_weak_spot"
             }, 
             "4": {
+                "affects": "Enemy Heroes", 
                 "behaviour": "Unit Target", 
                 "cooldown": "10.0 7.0 5.0", 
                 "damage": null, 
@@ -245,7 +246,6 @@
                 "key": "zabuza_track", 
                 "mana_cost": "50", 
                 "name": "Track", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "zabuza_track"
             }
         }, 
@@ -267,6 +267,7 @@
     "npc_dota_hero_centaur": {
         "abilities": {
             "1": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "30 24 18 12", 
                 "damage": "60 80 100 120", 
@@ -275,10 +276,10 @@
                 "key": "guy_dynamic_entry", 
                 "mana_cost": "70", 
                 "name": "Dynamic Entry", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "guy_dynamic_entry"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "0", 
                 "damage": null, 
@@ -287,10 +288,10 @@
                 "key": "guy_power_of_youth", 
                 "mana_cost": "0", 
                 "name": "Power of Youth", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "guy_power_of_youth"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "0", 
                 "damage": null, 
@@ -299,10 +300,10 @@
                 "key": "guy_gouken_mastery", 
                 "mana_cost": "0", 
                 "name": "Gouken Mastery", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "guy_gouken_mastery"
             }, 
             "4": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "90", 
                 "damage": null, 
@@ -311,7 +312,6 @@
                 "key": "guy_open_gates", 
                 "mana_cost": "125 90 175", 
                 "name": "Dairoku Keimon", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "guy_open_gates"
             }
         }, 
@@ -333,6 +333,7 @@
     "npc_dota_hero_doom_bringer": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "19 16 13 10", 
                 "damage": "70 100 130 160", 
@@ -341,10 +342,10 @@
                 "key": "hidan_cull_the_weak", 
                 "mana_cost": "0", 
                 "name": "Cull the Weak", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "hidan_cull_the_weak"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "21 18 15 12", 
                 "damage": "0 0 0 0", 
@@ -353,10 +354,10 @@
                 "key": "hidan_taunt", 
                 "mana_cost": "90 95 100 105", 
                 "name": "Taunt", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_MOVEMENT", 
                 "texture_name": "hidan_taunt"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "60 40 25 15", 
                 "damage": null, 
@@ -365,10 +366,10 @@
                 "key": "hidan_jashins_blessing", 
                 "mana_cost": "0", 
                 "name": "Jashin's Blessing", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "hidan_jashins_blessing"
             }, 
             "4": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "110.0", 
                 "damage": "40 64 88", 
@@ -377,7 +378,6 @@
                 "key": "hidan_death_possession_blood", 
                 "mana_cost": "50", 
                 "name": "Death Possession Blood", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "hidan_death_possession_blood"
             }, 
             "5": null, 
@@ -401,6 +401,7 @@
     "npc_dota_hero_dragon_knight": {
         "abilities": {
             "1": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "8", 
                 "damage": "50 70 90 110", 
@@ -409,10 +410,10 @@
                 "key": "naruto_kage_bunshin_rasengan", 
                 "mana_cost": "80 100 120 140", 
                 "name": "Kage Bunshin Rasengan", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "naruto_kage_bunshin_rasengan"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "10", 
                 "damage": null, 
@@ -421,10 +422,10 @@
                 "key": "naruto_kawazu_kumite", 
                 "mana_cost": "75", 
                 "name": "Kawazu Kumite", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "naruto_kawazu_kumite"
             }, 
             "3": {
+                "affects": "Allied Heroes", 
                 "behaviour": "Unit Target", 
                 "cooldown": "5", 
                 "damage": null, 
@@ -433,10 +434,10 @@
                 "key": "naruto_kage_bunshin_mastery", 
                 "mana_cost": "50", 
                 "name": "Kage Bunshin Mastery", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "naruto_kage_bunshin_mastery"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "13.0", 
                 "damage": "175 225 300", 
@@ -445,7 +446,6 @@
                 "key": "naruto_rasenshuriken", 
                 "mana_cost": "140", 
                 "name": "Rasenshuriken", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "naruto_rasenshuriken"
             }
         }, 
@@ -484,6 +484,7 @@
     "npc_dota_hero_juggernaut": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "36", 
                 "damage": null, 
@@ -492,7 +493,6 @@
                 "key": "yondaime_dash_strike", 
                 "mana_cost": "0", 
                 "name": null, 
-                "raw": "DOTA_ABILITY_BEHAVIOR_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "yondaime_dash_strike"
             }
         }, 
@@ -514,6 +514,7 @@
     "npc_dota_hero_kunkka": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "12.0 12.0 12.0 12.0", 
                 "damage": "110 150 190 230", 
@@ -522,10 +523,10 @@
                 "key": "kisame_suikodan_no_jutsu", 
                 "mana_cost": "120 120 120 120", 
                 "name": "Water Shark Bullet Technique", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_POINT", 
                 "texture_name": "kisame_suikodan_no_jutsu"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "27.0 24.0 21.0 18.0", 
                 "damage": null, 
@@ -534,10 +535,10 @@
                 "key": "kisame_mizu_bunshin_no_jutsu", 
                 "mana_cost": "135 140 145 150", 
                 "name": "Water Clone Technique", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "kisame_mizu_bunshin_no_jutsu"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "10 10 10 10", 
                 "damage": null, 
@@ -546,10 +547,10 @@
                 "key": "kisame_samehada", 
                 "mana_cost": "0", 
                 "name": "Samehada", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "kisame_samehada"
             }, 
             "4": {
+                "affects": null, 
                 "behaviour": "Toggle", 
                 "cooldown": "50.0", 
                 "damage": "40 64 88", 
@@ -558,7 +559,6 @@
                 "key": "kisame_water_prison", 
                 "mana_cost": "50", 
                 "name": "Water Prison", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE ", 
                 "texture_name": "kisame_water_prison"
             }
         }, 
@@ -580,6 +580,7 @@
     "npc_dota_hero_lion": {
         "abilities": {
             "1": {
+                "affects": "Enemy Units", 
                 "behaviour": "Channeled", 
                 "cooldown": "20 20 20 20", 
                 "damage": "100 150 200 250", 
@@ -588,10 +589,10 @@
                 "key": "gaara_sabaku_kyuu", 
                 "mana_cost": "100 115 130 145", 
                 "name": "Sabaku Kyuu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED", 
                 "texture_name": "gaara_sabaku_kyuu"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "10 10 10 10", 
                 "damage": "100 170 240 300", 
@@ -600,10 +601,10 @@
                 "key": "gaara_ryuusa_bakuryu", 
                 "mana_cost": "105 120 135 150", 
                 "name": "Ryuusa Bakuryu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT", 
                 "texture_name": "gaara_ryuusa_bakuryu"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Toggle", 
                 "cooldown": "5.0", 
                 "damage": null, 
@@ -612,10 +613,10 @@
                 "key": "gaara_suna_no_yoroi", 
                 "mana_cost": null, 
                 "name": "Suna no Yoroi", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "gaara_suna_no_yoroi"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "130 100 70", 
                 "damage": "300 450 600", 
@@ -624,7 +625,6 @@
                 "key": "gaara_sabaku_taiso", 
                 "mana_cost": "175 250 350", 
                 "name": "Sabaku Taiso", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "gaara_sabaku_taiso"
             }
         }, 
@@ -646,6 +646,7 @@
     "npc_dota_hero_ogre_magi": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "15.0", 
                 "damage": "60 85 110 135", 
@@ -654,10 +655,10 @@
                 "key": "madara_fire_release", 
                 "mana_cost": "110 120 130 140", 
                 "name": "Great Fire Annihilation", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_DIRECTIONAL | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "madara_fire_release"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "Point Target", 
                 "cooldown": "15 14 13 12", 
                 "damage": "100 170 240 300", 
@@ -666,10 +667,10 @@
                 "key": "madara_wood_release", 
                 "mana_cost": "110", 
                 "name": "Deep Forest Emergence", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "madara_wood_release"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "2.0", 
                 "damage": "35 50 65 80", 
@@ -678,10 +679,10 @@
                 "key": "madara_susano", 
                 "mana_cost": "50", 
                 "name": "Susano\u2019o Ribcage", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "madara_susano"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Channeled", 
                 "cooldown": "1 160", 
                 "damage": "400 525 650", 
@@ -690,7 +691,6 @@
                 "key": "madara_meteor", 
                 "mana_cost": "200 250 300", 
                 "name": "Heaven Concealed", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED", 
                 "texture_name": "madara_meteor"
             }, 
             "5": null
@@ -713,6 +713,7 @@
     "npc_dota_hero_phantom_assassin": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "15 15 15 15", 
                 "damage": null, 
@@ -721,10 +722,10 @@
                 "key": "sakura_earth_slam", 
                 "mana_cost": "140", 
                 "name": "Earth Slam", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET", 
                 "texture_name": "sakura_earth_slam"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "30 25 20 15", 
                 "damage": "35 50 65 80", 
@@ -733,10 +734,10 @@
                 "key": "sakura_chakra_burst", 
                 "mana_cost": "25", 
                 "name": "Chakra Burst", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "sakura_chakra_burst"
             }, 
             "3": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "0", 
                 "damage": null, 
@@ -745,10 +746,10 @@
                 "key": "sakura_chakra_enhanced_strength", 
                 "mana_cost": "0", 
                 "name": "Chakra Enhanced Strength", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "sakura_chakra_enhanced_strength"
             }, 
             "4": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "80.0 80.0 80.0", 
                 "damage": null, 
@@ -757,7 +758,6 @@
                 "key": "sakura_inner_sakura", 
                 "mana_cost": "100 150 200", 
                 "name": "Inner Sakura", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "sakura_inner_sakura"
             }
         }, 
@@ -779,6 +779,7 @@
     "npc_dota_hero_sand_king": {
         "abilities": {
             "1": {
+                "affects": null, 
                 "behaviour": "No Target", 
                 "cooldown": "20", 
                 "damage": null, 
@@ -787,10 +788,10 @@
                 "key": "raikage_raiton_no_yoroi", 
                 "mana_cost": "75 80 85 90", 
                 "name": "Raiton no Yoroi", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE", 
                 "texture_name": "raikage_raiton_no_yoroi"
             }, 
             "2": {
+                "affects": null, 
                 "behaviour": "Passive", 
                 "cooldown": "15", 
                 "damage": null, 
@@ -799,10 +800,10 @@
                 "key": "raikage_raigyaku_suihei", 
                 "mana_cost": "0", 
                 "name": "Raigyaku Suihei", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE", 
                 "texture_name": "raikage_raigyaku_suihei"
             }, 
             "3": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "15.0", 
                 "damage": null, 
@@ -811,10 +812,10 @@
                 "key": "raikage_lariat", 
                 "mana_cost": "95 115 125 135", 
                 "name": "Lariat", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING", 
                 "texture_name": "raikage_lariat"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "90 80 70", 
                 "damage": "150 225 300", 
@@ -823,7 +824,6 @@
                 "key": "raikage_raiga_no_bomu", 
                 "mana_cost": "110 120 130", 
                 "name": "Raiga no Bomu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "raikage_raiga_no_bomu"
             }
         }, 
@@ -862,6 +862,7 @@
     "npc_dota_hero_sven": {
         "abilities": {
             "1": {
+                "affects": "Enemy Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "25 22 19 16", 
                 "damage": "120 170 220 270", 
@@ -870,10 +871,10 @@
                 "key": "onoki_jinton", 
                 "mana_cost": "75 100 125 150", 
                 "name": "Jinton: Genkai Hakuri no Jutsu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "onoki_jinton"
             }, 
             "2": {
+                "affects": "Allied Units", 
                 "behaviour": "Unit Target", 
                 "cooldown": "20", 
                 "damage": null, 
@@ -882,10 +883,10 @@
                 "key": "onoki_stalagmite_armor", 
                 "mana_cost": "100", 
                 "name": "Stalagmite Armor", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET", 
                 "texture_name": "onoki_stalagmite_armor"
             }, 
             "3": {
+                "affects": "Enemies", 
                 "behaviour": "Aura", 
                 "cooldown": null, 
                 "damage": null, 
@@ -894,10 +895,10 @@
                 "key": "onoki_turn_to_dust", 
                 "mana_cost": null, 
                 "name": "Turn to Dust", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA", 
                 "texture_name": "onoki_turn_to_dust"
             }, 
             "4": {
+                "affects": "Enemy Units", 
                 "behaviour": "No Target", 
                 "cooldown": "2 80 70", 
                 "damage": null, 
@@ -906,7 +907,6 @@
                 "key": "onoki_kajutan_no_jutsu", 
                 "mana_cost": "175 250 325", 
                 "name": "Doton: Kajugan no Jutsu", 
-                "raw": "DOTA_ABILITY_BEHAVIOR_NO_TARGET", 
                 "texture_name": "onoki_kajutan_no_jutsu"
             }
         }, 

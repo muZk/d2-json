@@ -18,7 +18,50 @@ behaviour_constants = {
 	'DOTA_ABILITY_BEHAVIOR_POINT': 'DOTA_ToolTip_Ability_Point'
 }
 
+ability_unit_target_type_list = [
+	'DOTA_UNIT_TARGET_ALL',
+	'DOTA_UNIT_TARGET_HERO',
+	'DOTA_UNIT_TARGET_BASIC',
+	'DOTA_UNIT_TARGET_MECHANICAL',
+	'DOTA_UNIT_TARGET_BUILDING',
+	'DOTA_UNIT_TARGET_TREE',
+	'DOTA_UNIT_TARGET_CREEP',
+	'DOTA_UNIT_TARGET_COURIER',
+	'DOTA_UNIT_TARGET_NONE',
+	'DOTA_UNIT_TARGET_OTHER',
+	'DOTA_UNIT_TARGET_CUSTOM'
+]
+
+ability_target_team_list = [
+	'DOTA_UNIT_TARGET_TEAM_BOTH',
+	'DOTA_UNIT_TARGET_TEAM_ENEMY',
+	'DOTA_UNIT_TARGET_TEAM_FRIENDLY',
+	'DOTA_UNIT_TARGET_TEAM_NONE',
+	'DOTA_UNIT_TARGET_TEAM_CUSTOM'
+]
+
+dota_targeting_keys = [
+	"DOTA_ToolTip_Targeting_Enemy",
+	"DOTA_ToolTip_Targeting_EnemyCreeps",
+	"DOTA_ToolTip_Targeting_EnemyHero",
+	"DOTA_ToolTip_Targeting_EnemyUnits",
+	"DOTA_ToolTip_Targeting_EnemyHeroesAndBuildings",
+	"DOTA_ToolTip_Targeting_EnemyUnitsAndBuildings",
+	"DOTA_ToolTip_Targeting_Self",
+	"DOTA_ToolTip_Targeting_Allies",
+	"DOTA_ToolTip_Targeting_AlliedCreeps",
+	"DOTA_ToolTip_Targeting_AlliedHeroes",
+	"DOTA_ToolTip_Targeting_AlliedUnits",
+	"DOTA_ToolTip_Targeting_AlliedHeroesAndBuildings",
+	"DOTA_ToolTip_Targeting_AlliedUnitsAndBuildings",
+	"DOTA_ToolTip_Targeting_Trees",
+	"DOTA_Tooltip_Targeting_All_Heroes",
+	"DOTA_ToolTip_Targeting_Units"
+]
+
 def value_to_list(value):
+	if value is None:
+		value = ''
 	values = value.split('|')
 	values = map(lambda b: b.strip(), values)
 	return values
@@ -48,71 +91,84 @@ def parse_behaviour(behaviour, language = 'English'):
 		else:
 			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_NO_TARGET'), language)
 
-def parse_affects(target_type, target_team, language = 'English'):
-	key = 'Self'
-	
-	target_types = value_to_list(target_type)
-	target_teams = value_to_list(target_team)
+class TargetType:
 
-	enemies = 'DOTA_UNIT_TARGET_TEAM_ENEMY' in target_teams
-	allies  = 'DOTA_UNIT_TARGET_TEAM_FRIENDLY' in target_teams
-	both    = 'DOTA_UNIT_TARGET_TEAM_BOTH' in target_teams or (enemies and allies)
-	heroes  = 'DOTA_UNIT_TARGET_HERO' in target_types
-	creeps  = 'DOTA_UNIT_TARGET_CREEP' in target_types
-	units   = 'DOTA_UNIT_TARGET_BASIC' in target_types
-	builds  = 'DOTA_UNIT_TARGET_BUILDING' in target_types
+	def __init__(self, target_type_str):
+		self.is_empty = True
+		attr_list = value_to_list(target_type_str)
+		for target_type in ability_unit_target_type_list:
+			name = target_type.split('_')[-1].lower()
+			value = target_type in attr_list
+			setattr(self, name, value)
+			if value:
+				self.is_empty = False
 
-	# if both:
-	# 	if creeps or units or builds:
-	# 		key = 'Units'
-	# 	elif heroes:
-	# 		key = 'All_Heroes'
-	# elif enemies:
-	# 	if len(target_types) == 0:
-	# 		key = 'Enemy'
-	# 	elif heroes:
-	# 		if units:
-	# 			key = 'EnemyUnits'
-	# 		elif builds:
-	# 			key = 'EnemyHeroesAndBuildings'
-	# 		else:
-	# 			key = 'EnemyUnitsAndBuildings'
-	# 	else:
-	# 		key = 'EnemyCreeps'
-	# elif allies:
-	# 	if len(target_types) == 0:
-	# 		key = 'Enemy'
-	# 	elif heroes:
-	# 		if units:
-	# 			key = 'EnemyUnits'
-	# 		elif builds:
-	# 			key = 'EnemyHeroesAndBuildings'
-	# 		else:
-	# 			key = 'EnemyUnitsAndBuildings'
-	# 	else:
-	# 		key = 'EnemyCreeps'
+class TargetTeam:
 
- #      "DOTA_ToolTip_Targeting": "AFFECTS:",
- #      "DOTA_ToolTip_Targeting_Enemy": "Enemies",
- #      "DOTA_ToolTip_Targeting_EnemyCreeps": "Enemy Creeps",
- #      "DOTA_ToolTip_Targeting_EnemyHero": "Enemy Heroes",
- #      "DOTA_ToolTip_Targeting_EnemyUnits": "Enemy Units",
- #      "DOTA_ToolTip_Targeting_EnemyHeroesAndBuildings": "Enemy Heroes and Buildings",
- #      "DOTA_ToolTip_Targeting_EnemyUnitsAndBuildings": "Enemy Units and Buildings",
- #      "DOTA_ToolTip_Targeting_Self": "Self",
- #      "DOTA_ToolTip_Targeting_Allies": "Allies",
- #      "DOTA_ToolTip_Targeting_AlliedCreeps": "Allied Creeps",
- #      "DOTA_ToolTip_Targeting_AlliedHeroes": "Allied Heroes",
- #      "DOTA_ToolTip_Targeting_AlliedUnits": "Allied Units",
- #      "DOTA_ToolTip_Targeting_AlliedHeroesAndBuildings": "Allied Heroes and Buildings",
- #      "DOTA_ToolTip_Targeting_AlliedUnitsAndBuildings": "Allied Units and Buildings",
- #      "DOTA_ToolTip_Targeting_Trees": "Trees",
- #      "DOTA_Tooltip_Targeting_All_Heroes": "Heroes",
- #      "DOTA_ToolTip_Targeting_Units": "Units",
+	def __init__(self, target_team_str):
+		self.is_empty = True
+		attr_list = value_to_list(target_team_str)
+		for target_team in ability_target_team_list:
+			name = target_team.split('_')[-1].lower()
+			value = target_team in attr_list
+			setattr(self, name, value)
+			if value:
+				self.is_empty = False
 
+class AffectsTooltip:
 
-	return i18n.t('DOTA_ToolTip_Targeting_%s' % key, language)
+	def __init__(self, target_team, target_type):
+		self.target_team = target_team
+		self.target_type = target_type
 
+	def tooltip_key(self):
+		# http://moddota.com/forums/discussion/14/datadriven-ability-breakdown-documentation#Comment_58
+		if self.target_type.is_empty:
+			if self.target_team.enemy:
+				return 'DOTA_ToolTip_Targeting_Enemy'
+			elif self.target_team.friendly:
+				return 'DOTA_ToolTip_Targeting_Allies'
+			elif self.target_team.both:
+				return 'DOTA_ToolTip_Targeting_Units'
+		elif self.target_team.both:
+			if self.target_type.hero and self.target_type.basic:
+				return 'DOTA_ToolTip_Targeting_Units'
+			elif self.target_type.all or self.target_type.basic or self.target_type.creep:
+				return 'DOTA_ToolTip_Targeting_Units'
+			elif self.target_type.hero:
+				return 'DOTA_Tooltip_Targeting_All_Heroes'
+		elif self.target_team.enemy:
+			if self.target_type.hero:
+				if self.target_type.basic and self.target_type.building:
+					return 'DOTA_ToolTip_Targeting_EnemyUnitsAndBuildings'
+				elif self.target_type.building:
+					return 'DOTA_ToolTip_Targeting_EnemyUnitsAndBuildings'
+				elif self.target_type.basic:
+					return 'DOTA_ToolTip_Targeting_EnemyUnits'
+				else:
+					return 'DOTA_ToolTip_Targeting_EnemyHero'
+			elif self.target_type.basic:
+				return 'DOTA_ToolTip_Targeting_EnemyCreeps'
+		elif self.target_team.friendly:
+			if self.target_type.hero:
+				if self.target_type.basic and self.target_type.building:
+					return 'DOTA_ToolTip_Targeting_AlliedUnitsAndBuildings'
+				elif self.target_type.building:
+					return 'DOTA_ToolTip_Targeting_AlliedUnitsAndBuildings'
+				elif self.target_type.basic:
+					return 'DOTA_ToolTip_Targeting_AlliedUnits'
+				else:
+					return 'DOTA_ToolTip_Targeting_AlliedHeroes'
+			elif self.target_type.basic:
+				return 'DOTA_ToolTip_Targeting_AlliedCreeps'
+		else:
+			if self.target_type.tree:
+				return 'DOTA_ToolTip_Targeting_Trees'
+			else:
+				return 'DOTA_ToolTip_Targeting_Self'
+
+	def tooltip(self, language = 'English'):
+		return i18n.t(self.tooltip_key(), language)
 
 class Ability:
 
@@ -134,7 +190,9 @@ class Ability:
 				'damage': self.default(key, 'AbilityDamage'),
 				'mana_cost': self.default(key, 'AbilityManaCost'),
 				'texture_name': self.default(key, 'AbilityTextureName'),
-				'behaviour': parse_behaviour(self.default(key, 'AbilityBehavior'))
+				'behaviour': parse_behaviour(self.default(key, 'AbilityBehavior')),
+				'affects': self.affects(key),
+				'key': key
 			}
 			if len(self.include) > 0:
 				for attr in self.include:
@@ -142,3 +200,9 @@ class Ability:
 			return ability
 		else:
 			return None
+
+	def affects(self, key):
+		target_type = TargetType(self.default(key, 'AbilityUnitTargetType'))
+		target_team = TargetTeam(self.default(key, 'AbilityUnitTargetTeam'))
+		affects = AffectsTooltip(target_team, target_type)
+		return affects.tooltip()
