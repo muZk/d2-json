@@ -485,7 +485,7 @@
         "abilities": {
             "1": {
                 "affects": null, 
-                "behaviour": "No Target", 
+                "behaviour": null, 
                 "cooldown": "36", 
                 "damage": null, 
                 "damage_type": "physical", 

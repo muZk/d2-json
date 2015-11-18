@@ -1,4 +1,5 @@
 from utils import camelcase
+import utils
 import i18n
 
 damage_type_constants = {
@@ -7,16 +8,16 @@ damage_type_constants = {
 	'DOTA_ATTRIBUTE_INTELLECT': 'int'
 }
 
-behaviour_constants = {
-	'DOTA_ABILITY_BEHAVIOR_NO_TARGET': 'DOTA_ToolTip_Ability_NoTarget',
-	'DOTA_ABILITY_BEHAVIOR_PASSIVE': 'DOTA_ToolTip_Ability_Passive',
-	'DOTA_ABILITY_BEHAVIOR_CHANNELLED': 'DOTA_ToolTip_Ability_Channeled',
-	'DOTA_ABILITY_BEHAVIOR_AUTOCAST': 'DOTA_ToolTip_Ability_AutoCast',
-	'DOTA_ABILITY_BEHAVIOR_AURA': 'DOTA_ToolTip_Ability_Aura',
-	'DOTA_ABILITY_BEHAVIOR_TOGGLE': 'DOTA_ToolTip_Ability_Toggle',
-	'DOTA_ABILITY_BEHAVIOR_UNIT_TARGET': 'DOTA_ToolTip_Ability_Target',
-	'DOTA_ABILITY_BEHAVIOR_POINT': 'DOTA_ToolTip_Ability_Point'
-}
+ability_behaviour_list = [
+	'DOTA_ABILITY_BEHAVIOR_NO_TARGET',
+	'DOTA_ABILITY_BEHAVIOR_PASSIVE',
+	'DOTA_ABILITY_BEHAVIOR_CHANNELLED',
+	'DOTA_ABILITY_BEHAVIOR_AUTOCAST',
+	'DOTA_ABILITY_BEHAVIOR_AURA',
+	'DOTA_ABILITY_BEHAVIOR_TOGGLE',
+	'DOTA_ABILITY_BEHAVIOR_UNIT_TARGET',
+	'DOTA_ABILITY_BEHAVIOR_POINT'
+]
 
 ability_unit_target_type_list = [
 	'DOTA_UNIT_TARGET_ALL',
@@ -38,25 +39,6 @@ ability_target_team_list = [
 	'DOTA_UNIT_TARGET_TEAM_FRIENDLY',
 	'DOTA_UNIT_TARGET_TEAM_NONE',
 	'DOTA_UNIT_TARGET_TEAM_CUSTOM'
-]
-
-dota_targeting_keys = [
-	"DOTA_ToolTip_Targeting_Enemy",
-	"DOTA_ToolTip_Targeting_EnemyCreeps",
-	"DOTA_ToolTip_Targeting_EnemyHero",
-	"DOTA_ToolTip_Targeting_EnemyUnits",
-	"DOTA_ToolTip_Targeting_EnemyHeroesAndBuildings",
-	"DOTA_ToolTip_Targeting_EnemyUnitsAndBuildings",
-	"DOTA_ToolTip_Targeting_Self",
-	"DOTA_ToolTip_Targeting_Allies",
-	"DOTA_ToolTip_Targeting_AlliedCreeps",
-	"DOTA_ToolTip_Targeting_AlliedHeroes",
-	"DOTA_ToolTip_Targeting_AlliedUnits",
-	"DOTA_ToolTip_Targeting_AlliedHeroesAndBuildings",
-	"DOTA_ToolTip_Targeting_AlliedUnitsAndBuildings",
-	"DOTA_ToolTip_Targeting_Trees",
-	"DOTA_Tooltip_Targeting_All_Heroes",
-	"DOTA_ToolTip_Targeting_Units"
 ]
 
 def value_to_list(value):
@@ -97,7 +79,7 @@ class TargetType:
 		self.is_empty = True
 		attr_list = value_to_list(target_type_str)
 		for target_type in ability_unit_target_type_list:
-			name = target_type.split('_')[-1].lower()
+			name = utils.sanitize_key(target_type)
 			value = target_type in attr_list
 			setattr(self, name, value)
 			if value:
@@ -109,7 +91,7 @@ class TargetTeam:
 		self.is_empty = True
 		attr_list = value_to_list(target_team_str)
 		for target_team in ability_target_team_list:
-			name = target_team.split('_')[-1].lower()
+			name = utils.sanitize_key(target_team)
 			value = target_team in attr_list
 			setattr(self, name, value)
 			if value:
@@ -118,8 +100,8 @@ class TargetTeam:
 class AffectsTooltip:
 
 	def __init__(self, target_team, target_type):
-		self.target_team = target_team
-		self.target_type = target_type
+		self.target_team = TargetTeam(target_team)
+		self.target_type = TargetType(target_type)
 
 	def tooltip_key(self):
 		# http://moddota.com/forums/discussion/14/datadriven-ability-breakdown-documentation#Comment_58
@@ -170,6 +152,43 @@ class AffectsTooltip:
 	def tooltip(self, language = 'English'):
 		return i18n.t(self.tooltip_key(), language)
 
+class BehaviourTooltip:
+
+	def __init__(self, ability_behavior):
+
+		self.is_empty  = True
+		self.attr_list = value_to_list(ability_behavior)
+
+		for behaviour in ability_behaviour_list:
+			name  = utils.sanitize_key(behaviour, 'DOTA_ABILITY_BEHAVIOR_')
+			value = behaviour in self.attr_list
+			setattr(self, name, value)
+			if value:
+				self.is_empty = False
+
+	def tooltip_key(self):
+		if self.is_empty:
+			return None
+		elif self.channelled:
+			return 'DOTA_ToolTip_Ability_Channeled'
+		elif self.toggle:
+			return 'DOTA_ToolTip_Ability_Toggle'
+		elif self.aura:
+			return 'DOTA_ToolTip_Ability_Aura'
+		elif self.autocast:
+			return 'DOTA_ToolTip_Ability_AutoCast'
+		elif self.unit_target:
+			return 'DOTA_ToolTip_Ability_Target'
+		elif self.point:
+			return 'DOTA_ToolTip_Ability_Point'
+		elif self.passive:
+			return 'DOTA_ToolTip_Ability_Passive'
+		else:
+			return 'DOTA_ToolTip_Ability_NoTarget'
+
+	def tooltip(self, language = 'English'):
+		return i18n.t(self.tooltip_key(), language)
+
 class Ability:
 
 	def __init__(self, abilities, language, include = []):
@@ -190,7 +209,7 @@ class Ability:
 				'damage': self.default(key, 'AbilityDamage'),
 				'mana_cost': self.default(key, 'AbilityManaCost'),
 				'texture_name': self.default(key, 'AbilityTextureName'),
-				'behaviour': parse_behaviour(self.default(key, 'AbilityBehavior')),
+				'behaviour': self.behaviour(key),
 				'affects': self.affects(key),
 				'key': key
 			}
@@ -202,7 +221,9 @@ class Ability:
 			return None
 
 	def affects(self, key):
-		target_type = TargetType(self.default(key, 'AbilityUnitTargetType'))
-		target_team = TargetTeam(self.default(key, 'AbilityUnitTargetTeam'))
-		affects = AffectsTooltip(target_team, target_type)
-		return affects.tooltip()
+		target_type = self.default(key, 'AbilityUnitTargetType')
+		target_team = self.default(key, 'AbilityUnitTargetTeam')
+		return AffectsTooltip(target_team, target_type).tooltip()
+
+	def behaviour(self, key, language = 'English'):
+		return BehaviourTooltip(self.default(key, 'AbilityBehavior')).tooltip()
