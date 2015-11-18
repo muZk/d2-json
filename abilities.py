@@ -8,7 +8,7 @@ damage_type_constants = {
 	'DOTA_ATTRIBUTE_INTELLECT': 'int'
 }
 
-ability_behaviour_list = [
+ability_behavior_list = [
 	'DOTA_ABILITY_BEHAVIOR_NO_TARGET',
 	'DOTA_ABILITY_BEHAVIOR_PASSIVE',
 	'DOTA_ABILITY_BEHAVIOR_CHANNELLED',
@@ -47,31 +47,6 @@ def value_to_list(value):
 	values = value.split('|')
 	values = map(lambda b: b.strip(), values)
 	return values
-
-def parse_behaviour(behaviour, language = 'English'):
-	#http://moddota.com/forums/discussion/14/datadriven-ability-breakdown-documentation
-	behaviours = value_to_list(behaviour)
-	if len(behaviours) == 0:
-		return None
-	elif len(behaviours) == 1:
-		return i18n.t(behaviour_constants.get(behaviours[0]), language)
-	else:
-		if 'DOTA_ABILITY_BEHAVIOR_CHANNELLED' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_CHANNELLED'), language)
-		elif 'DOTA_ABILITY_BEHAVIOR_TOGGLE' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_TOGGLE'), language)
-		elif 'DOTA_ABILITY_BEHAVIOR_AURA' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_AURA'), language)
-		elif 'DOTA_ABILITY_BEHAVIOR_AUTOCAST' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_AUTOCAST'), language)
-		elif 'DOTA_ABILITY_BEHAVIOR_UNIT_TARGET' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_UNIT_TARGET'), language)
-		elif 'DOTA_ABILITY_BEHAVIOR_POINT' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_POINT'), language)
-		elif 'DOTA_ABILITY_BEHAVIOR_PASSIVE' in behaviours:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_PASSIVE'), language)
-		else:
-			return i18n.t(behaviour_constants.get('DOTA_ABILITY_BEHAVIOR_NO_TARGET'), language)
 
 class TargetType:
 
@@ -159,9 +134,9 @@ class BehaviourTooltip:
 		self.is_empty  = True
 		self.attr_list = value_to_list(ability_behavior)
 
-		for behaviour in ability_behaviour_list:
-			name  = utils.sanitize_key(behaviour, 'DOTA_ABILITY_BEHAVIOR_')
-			value = behaviour in self.attr_list
+		for behavior in ability_behavior_list:
+			name  = utils.sanitize_key(behavior, 'DOTA_ABILITY_BEHAVIOR_')
+			value = behavior in self.attr_list
 			setattr(self, name, value)
 			if value:
 				self.is_empty = False
@@ -209,7 +184,7 @@ class Ability:
 				'damage': self.default(key, 'AbilityDamage'),
 				'mana_cost': self.default(key, 'AbilityManaCost'),
 				'texture_name': self.default(key, 'AbilityTextureName'),
-				'behaviour': self.behaviour(key),
+				'behavior': self.behavior(key),
 				'affects': self.affects(key),
 				'key': key
 			}
@@ -225,5 +200,5 @@ class Ability:
 		target_team = self.default(key, 'AbilityUnitTargetTeam')
 		return AffectsTooltip(target_team, target_type).tooltip()
 
-	def behaviour(self, key, language = 'English'):
+	def behavior(self, key, language = 'English'):
 		return BehaviourTooltip(self.default(key, 'AbilityBehavior')).tooltip()

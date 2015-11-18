@@ -2,7 +2,6 @@ import pprint
 import json
 from steam import vdf
 from heroes import Hero
-from abilities import parse_behaviour
 
 pp = pprint.PrettyPrinter(indent=1)
 vscripts_folder = './test/nwu/game/dota_addons/nwu/scripts/npc'
