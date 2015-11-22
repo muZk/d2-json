@@ -1,4 +1,4 @@
-import json
+import json, glob
 from steam import vdf
 from heroes import Hero
 from utils import colorize
@@ -30,10 +30,14 @@ def _log(label, msg, color = 'white'):
 
 def _dump(content, output_path):
 	with open(output_path, 'w') as outfile:
-		print('Saving file in %s' % output_path)
+		_info('Saving file in %s' % output_path)
 		json.dump(content, outfile, sort_keys = True, indent = 4)
 
-def dump(addon_path, addon_name, output_path = 'heroes.json'):
+def _language_files(addon_path, addon_name):
+	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
+	return glob.glob(resource_folder + '*.txt')
+
+def dump(addon_path, addon_name, output_path = 'heroes.json', language = 'English'):
 
 	print('Generating JSON for mod %s at %s' % (addon_name, addon_path))
 	print('Finding required files...')
@@ -43,12 +47,20 @@ def dump(addon_path, addon_name, output_path = 'heroes.json'):
 
 	heroes_custom = path.join(vscripts_folder, 'npc_heroes_custom.txt')
 	abil_custom  = path.join(vscripts_folder, 'npc_abilities_custom.txt')
-	addon_english = path.join(resource_folder, 'addon_english.txt') # TODO: Add available languages
 
-	if _file_exists(heroes_custom) and _file_exists(abil_custom) and _file_exists(addon_english):
-		print('Required files has been found')
-		heroes    = _read_file(heroes_custom)
-		abilities = _read_file(abil_custom)
-		english   = _read_file(addon_english)
-		hero_dump = Hero(heroes, abilities, english, ['Village']).parse()
-		_dump(hero_dump, output_path)
+	# TODO: take into account language parameter
+	if _file_exists(heroes_custom) and _file_exists(abil_custom):
+		for addon_english in _language_files(addon_path, addon_name):
+			if _file_exists(addon_english):
+				print('Required files has been found')
+				heroes    = _read_file(heroes_custom)
+				abilities = _read_file(abil_custom)
+				english   = _read_file(addon_english)
+				hero_dump = Hero(heroes, abilities, english, ['Village']).parse()
+				_dump(hero_dump, output_path)
+
+def possible_languages(addon_path, addon_name):
+	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
+	files = _language_files(addon_path, addon_name)
+	languages = map(lambda x: x.replace(resource_folder, '').replace('.txt',''), files)
+	return languages

@@ -19,6 +19,13 @@ parser.add_option('-a', '--addon',
     help='Addon name.',
     default=os.listdir(os.getcwd())[0])
 
+parser.add_option('-l', '--lang',
+    action='store',
+    dest='language', 
+    type=str,
+    help='Language.',
+    default='English')
+
 options, args = parser.parse_args()
 
-dump.dump(options.addon_folder, options.addon_name)
+dump.dump(options.addon_folder, options.addon_name, 'heroes.json', options.language)

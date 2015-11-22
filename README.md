@@ -1,16 +1,30 @@
-# Dependencies
-- [steamodd](http://steamodd.readthedocs.org/en/latest/vdf.html): ``pip install steamodd``
+# moddump #
 
-# Testing
-I'm currenltly testing with [NWU D2 mod](https://github.com/muZk/NWU_Reborn)
+Dota2 command line utility to generate localized JSON of your mod.
 
-```sh
-mkdir test
-cd test
-git clone https://github.com/muZk/NWU_Reborn.git
-```
+## Overview ##
 
-I'll use only the necesary files in the future. At the moment I'm not sure which one I'm going to need.
+
+
+## Requirements ##
+
+Python 2.7
+
+## Installation ##
+
+From command line:
+
+    $ pip install steamodd
+
+If you wish to install it manually, Steamodd uses the standard distutils
+module. To install it run:
+
+    $ python setup.py install
+
+## How to use ##
+
+
+
 
 # TODO
-- Everything :D
+- Add tests
