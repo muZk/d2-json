@@ -1,0 +1,24 @@
+#!/usr/bin/env python
+
+from moddump import dump
+import os, optparse
+
+parser = optparse.OptionParser()
+
+parser.add_option('-f', '--folder',
+    action='store',
+    dest='addon_folder', 
+    type=str,
+    help= 'Addon folder.',
+    default=os.getcwd())
+
+parser.add_option('-a', '--addon',
+    action='store',
+    dest='addon_name', 
+    type=str,
+    help='Addon name.',
+    default=os.listdir(os.getcwd())[0])
+
+options, args = parser.parse_args()
+
+dump.dump(options.addon_folder, options.addon_name)
