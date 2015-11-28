@@ -3,6 +3,7 @@ from steam import vdf
 from heroes import Hero
 from utils import colorize
 from os import path
+from os import makedirs
 
 def _file_exists(file_path):
 	if not path.isfile(file_path):
@@ -37,7 +38,11 @@ def _language_files(addon_path, addon_name):
 	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
 	return glob.glob(resource_folder + '*.txt')
 
-def dump(addon_path, addon_name, output_path = 'heroes.json', language = 'English'):
+def _language_name_from_file(addon_path, addon_name, file_name):
+	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
+	return file_name.replace(resource_folder, '').replace('.txt','')
+
+def dump(addon_path, addon_name, output_directory, language = None):
 
 	print('Generating JSON for mod %s at %s' % (addon_name, addon_path))
 	print('Finding required files...')
@@ -48,6 +53,10 @@ def dump(addon_path, addon_name, output_path = 'heroes.json', language = 'Englis
 	heroes_custom = path.join(vscripts_folder, 'npc_heroes_custom.txt')
 	abil_custom  = path.join(vscripts_folder, 'npc_abilities_custom.txt')
 
+	if not path.exists(output_directory):
+		_info('Creating output directory: %s' % output_directory)
+		makedirs(output_directory)
+
 	# TODO: take into account language parameter
 	if _file_exists(heroes_custom) and _file_exists(abil_custom):
 		for addon_english in _language_files(addon_path, addon_name):
@@ -56,8 +65,8 @@ def dump(addon_path, addon_name, output_path = 'heroes.json', language = 'Englis
 				heroes    = _read_file(heroes_custom)
 				abilities = _read_file(abil_custom)
 				english   = _read_file(addon_english)
-				hero_dump = Hero(heroes, abilities, english, ['Village']).parse()
-				_dump(hero_dump, output_path)
+				hero_dump = Hero(heroes, abilities, english).parse()
+				_dump(hero_dump, path.join(output_directory, _language_name_from_file(addon_path, addon_name, addon_english)) + '.json')
 
 def possible_languages(addon_path, addon_name):
 	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'

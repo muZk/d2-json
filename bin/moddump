@@ -4,28 +4,44 @@ from moddump import dump
 import os, optparse
 
 parser = optparse.OptionParser()
+current = os.getcwd()
+
+def find_addon_name(location):
+    path = os.path.join(location, 'content', 'dota_addons')
+    if os.path.isdir(path):
+        return  os.listdir(path)[0]
+    return None
 
 parser.add_option('-f', '--folder',
     action='store',
     dest='addon_folder', 
     type=str,
-    help= 'Addon folder.',
-    default=os.getcwd())
+    help= '(OPTIONAL) Container folder of your addon. Default value is the current location, %s in this case.' % current,
+    default=current)
 
 parser.add_option('-a', '--addon',
     action='store',
     dest='addon_name', 
     type=str,
-    help='Addon name.',
-    default=os.listdir(os.getcwd())[0])
+    help='(OPTIONAL) Addon name. It is used to find your files. By default, it will try to look into ADDON_FOLDER/content/dota_addons for the addon name.',
+    default=None)
 
 parser.add_option('-l', '--lang',
     action='store',
     dest='language', 
     type=str,
-    help='Language.',
-    default='English')
+    help='(OPTIONAL) Language used to extract the information. By default, it will use all langues provides in ADDON_FOLDER/game/dota_addons/ADDON_NAME/resource',
+    default=None)
+
+parser.add_option('-o', '--output',
+    action='store',
+    dest='output', 
+    type=str,
+    help='(OPTIONAL) output directory where you want to save the dump. Default: %s/dumps' % current,
+    default=os.path.join(current, 'dumps'))
 
 options, args = parser.parse_args()
 
-dump.dump(options.addon_folder, options.addon_name, 'heroes.json', options.language)
+addon_folder = options.addon_folder
+addon_name = options.addon_name or find_addon_name(addon_folder)
+dump.dump(addon_folder, addon_name, options.output, options.language)
