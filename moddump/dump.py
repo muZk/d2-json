@@ -35,12 +35,8 @@ def _dump(content, output_path):
 		json.dump(content, outfile, sort_keys = True, indent = 4)
 
 def _language_files(addon_path, addon_name):
-	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
-	return glob.glob(resource_folder + '*.txt')
-
-def _language_name_from_file(addon_path, addon_name, file_name):
-	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
-	return file_name.replace(resource_folder, '').replace('.txt','')
+	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_*.txt'
+	return glob.glob(resource_folder)
 
 def dump(addon_path, addon_name, output_directory, language = None, include = []):
 
@@ -66,13 +62,14 @@ def dump(addon_path, addon_name, output_directory, language = None, include = []
 			makedirs(output_directory)
 
 		for addon_language in languages:
+			file_name = path.basename(addon_language)
 			if _file_exists(addon_language):
-				print('Required files has been found')
-				heroes    = _read_file(heroes_custom)
-				abilities = _read_file(abil_custom)
-				english   = _read_file(addon_language)
-				hero_dump = Hero(heroes, abilities, english, include).parse()
-				_dump(hero_dump, path.join(output_directory, _language_name_from_file(addon_path, addon_name, addon_language)) + '.json')
+				heroes      = _read_file(heroes_custom)
+				abilities   = _read_file(abil_custom)
+				language    = _read_file(addon_language)
+				content     = Hero(heroes, abilities, language, include).parse()
+				output_path = path.join(output_directory, file_name.replace('.txt', '.json'))
+				_dump(content, output_path)
 
 def possible_languages(addon_path, addon_name):
 	resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
