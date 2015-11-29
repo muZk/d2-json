@@ -91,12 +91,7 @@ Python 2.7
 
 ## Installation ##
 
-From command line:
-
-    $ pip install moddump
-
-If you wish to install it manually, moddump uses the standard distutils 
-module. To install it run:
+Moddump uses the standard distutils module. To install it run:
 
     $ python setup.py install
 
