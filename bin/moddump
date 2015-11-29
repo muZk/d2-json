@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 
 from moddump import dump
-import os, optparse
+import os, argparse
 
-parser = optparse.OptionParser()
+parser = argparse.ArgumentParser()
 current = os.getcwd()
 
 def find_addon_name(location):
@@ -12,36 +12,44 @@ def find_addon_name(location):
         return  os.listdir(path)[0]
     return None
 
-parser.add_option('-f', '--folder',
+parser.add_argument('-f', '--folder',
     action='store',
     dest='addon_folder', 
     type=str,
     help= '(OPTIONAL) Container folder of your addon. Default value is the current location, %s in this case.' % current,
     default=current)
 
-parser.add_option('-a', '--addon',
+parser.add_argument('-a', '--addon',
     action='store',
     dest='addon_name', 
     type=str,
     help='(OPTIONAL) Addon name. It is used to find your files. By default, it will try to look into ADDON_FOLDER/content/dota_addons for the addon name.',
     default=None)
 
-parser.add_option('-l', '--lang',
+parser.add_argument('-l', '--lang',
     action='store',
     dest='language', 
     type=str,
     help='(OPTIONAL) Language used to extract the information. By default, it will use all langues provides in ADDON_FOLDER/game/dota_addons/ADDON_NAME/resource',
     default=None)
 
-parser.add_option('-o', '--output',
+parser.add_argument('-o', '--output',
     action='store',
     dest='output', 
     type=str,
     help='(OPTIONAL) output directory where you want to save the dump. Default: %s/dumps' % current,
     default=os.path.join(current, 'dumps'))
 
-options, args = parser.parse_args()
+parser.add_argument("-i", "--include", 
+    default=[],
+    type=str, 
+    nargs='+',
+    action='store',
+    dest='include',
+    help="(OPTIONAL) Additional unit attributes you want to include in the exported JSON. Usefull when you add custom attributes.")
+
+options = parser.parse_args()
 
 addon_folder = options.addon_folder
 addon_name = options.addon_name or find_addon_name(addon_folder)
-dump.dump(addon_folder, addon_name, options.output, options.language)
+dump.dump(addon_folder, addon_name, options.output, options.language, options.include)

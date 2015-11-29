@@ -13,7 +13,7 @@ setup(name='moddump',
       license='MIT',
       packages=['moddump'],
       scripts= ['bin/moddump'],
-      data_files=[('', ['moddump/locales/dota_english.json'])],
+      data_files=[('moddump/locales', moddump.__locales__)],
     	classifiers = [
           "License :: OSI Approved :: MIT License",
           "Intended Audience :: Developers",
