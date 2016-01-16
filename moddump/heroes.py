@@ -10,12 +10,13 @@ attribute_constants = {
 
 
 class Hero(object):
-    def __init__(self, heroes, abilities, language_file, include=[]):
+    def __init__(self, heroes, abilities, language_file, addon, include=[]):
         self.heroes = heroes['DOTAHeroes']
         self.abilities = abilities['DOTAAbilities']
         self.language_file = language_file
         self.language = language_file['lang']['Language']
         self.include = include
+        self.addon = addon
 
     def default(self, key, attr):
         return self.heroes[key].get(attr)
@@ -53,5 +54,6 @@ class Hero(object):
         parsed['Heroes'] = {}
         parsed['Language'] = self.language
         for hero_key, value in self.heroes.iteritems():
-            parsed['Heroes'][hero_key] = self.parse_hero(hero_key)
+            if hero_key in self.addon.available_heroes:
+                parsed['Heroes'][hero_key] = self.parse_hero(hero_key)
         return parsed

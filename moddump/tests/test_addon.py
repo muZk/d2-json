@@ -35,3 +35,9 @@ class TestAddon(TestCase):
         addon = moddump.addon.Addon('fake_addon', addon_path)
         self.assertEquals(addon.get_file('english'), addon.language_files[1])
         self.assertEquals(addon.get_file('russian'), addon.language_files[0])
+
+    def test_open(self):
+        addon_path = path.join(path.dirname(path.abspath(__file__)), 'fake_addon')
+        addon = moddump.addon.Addon('fake_addon', addon_path)
+        addon.open()
+        self.assertEquals(len(addon.available_heroes), 3)

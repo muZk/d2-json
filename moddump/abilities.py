@@ -180,7 +180,7 @@ class Ability:
         if key in self.abilities:
             ability = {
                 'name': i18n.t('DOTA_Tooltip_ability_%s' % key, self.language, self.language_file),
-                'description': i18n.t('DOTA_Tooltip_ability_%s_description' % key, self.language, self.language_file),
+                'description': self.get_description(key),
                 'damage_type': self.damage_type(key),
                 'behavior': self.behavior(key),
                 'affects': self.affects(key),
@@ -196,6 +196,13 @@ class Ability:
             return ability
         else:
             return None
+
+    def get_description(self, key):
+        description = i18n.t('DOTA_Tooltip_ability_%s_description' % key, self.language, self.language_file)
+        if description:
+            return description
+        else:
+            return i18n.t('DOTA_Tooltip_ability_%s_Description' % key, self.language, self.language_file)
 
     def damage_type(self, key):
         dmg = self.default(key, 'AbilityUnitDamageType', '')  # example: DAMAGE_TYPE_PHYSICAL

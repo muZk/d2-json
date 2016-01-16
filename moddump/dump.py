@@ -50,6 +50,7 @@ def dump(addon_path, addon_name, output_directory, language=None, include=[]):
     print('Finding required files...')
 
     addon = Addon(addon_name, addon_path)
+    addon.open()
 
     if _file_exists(addon.npc_abilities_custom) and _file_exists(addon.npc_heroes_custom):
 
@@ -78,10 +79,13 @@ def dump(addon_path, addon_name, output_directory, language=None, include=[]):
 
         _info('Extracting data...')
 
+        if len(include) > 0:
+            _info('Following hero attributes will be included: %s' % ', '.join(include))
+
         for language in languages:
             language_file = addon.get_file(language)
             heroes = _read_file(addon.npc_heroes_custom)
             abilities = _read_file(addon.npc_abilities_custom)
             english = _read_file(language_file)
-            hero_dump = Hero(heroes, abilities, english, include).parse()
+            hero_dump = Hero(heroes, abilities, english, addon, include).parse()
             _dump(hero_dump, path.join(output_directory, language) + '.json')
