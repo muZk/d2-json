@@ -59,3 +59,7 @@ target/
 # NWU folder
 NWU_Reborn
 test
+dumps/
+
+.idea
+test.sh
