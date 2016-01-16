@@ -4,15 +4,16 @@ from heroes import Hero
 from utils import colorize
 from os import path
 from os import makedirs
+from addon import Addon
 import io
 
 
 def _file_exists(file_path):
     if not path.isfile(file_path):
-        _error('File not found: %s' % (file_path))
+        _error('File not found: %s' % path.basename(file_path))
         return False
     else:
-        _success('%s found!' % file_path)
+        _success('%s found!' % path.basename(file_path))
         return True
 
 
@@ -44,53 +45,43 @@ def _dump(content, output_path):
         outfile.write(unicode(data))
 
 
-def _language_files(addon_path, addon_name):
-    resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
-    return glob.glob(resource_folder + '*.txt')
-
-
-def _language_name_from_file(addon_path, addon_name, file_name):
-    resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
-    return file_name.replace(resource_folder, '').replace('.txt', '')
-
-
 def dump(addon_path, addon_name, output_directory, language=None, include=[]):
     print('Generating JSON for mod %s at %s' % (addon_name, addon_path))
     print('Finding required files...')
 
-    vscripts_folder = path.join(addon_path, 'game/dota_addons/%s/scripts/npc' % addon_name)
-    resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name)
+    addon = Addon(addon_name, addon_path)
 
-    heroes_custom = path.join(vscripts_folder, 'npc_heroes_custom.txt')
-    abil_custom = path.join(vscripts_folder, 'npc_abilities_custom.txt')
+    if _file_exists(addon.npc_abilities_custom) and _file_exists(addon.npc_heroes_custom):
 
-    # TODO: take into account language parameter
-    if _file_exists(heroes_custom) and _file_exists(abil_custom):
+        _info('Required files has been found')
+
+        if len(addon.language_files) == 0:
+             _error('No languages were found')
+             return
+        else:
+            _info('Languages found: %s' % ', '.join(addon.languages()))
 
         if language is None:
-            languages = _language_files(addon_path, addon_name)
+            languages = addon.languages()
         else:
-            languages = [
-                path.join(addon_path, 'game/dota_addons/%s/resource/addon_%s.txt' % (addon_name, language.lower()))]
+            language_file = addon.get_file(language)
+            if language_file is None:
+                _error('Language %s not found' % language)
+                return
+            else:
+                _info('Using %s' % language)
+                languages = [language]
 
         if not path.exists(output_directory):
             _info('Creating output directory: %s' % output_directory)
             makedirs(output_directory)
 
-        for addon_language in languages:
-            if _file_exists(addon_language):
-                print('Required files has been found')
-                heroes = _read_file(heroes_custom)
-                abilities = _read_file(abil_custom)
-                english = _read_file(addon_language)
-                hero_dump = Hero(heroes, abilities, english, include).parse()
-                _dump(hero_dump,
-                      path.join(output_directory,
-                                _language_name_from_file(addon_path, addon_name, addon_language)) + '.json')
+        _info('Extracting data...')
 
-
-def possible_languages(addon_path, addon_name):
-    resource_folder = path.join(addon_path, 'game/dota_addons/%s/resource' % addon_name) + '/addon_'
-    files = _language_files(addon_path, addon_name)
-    languages = map(lambda x: x.replace(resource_folder, '').replace('.txt', ''), files)
-    return languages
+        for language in languages:
+            language_file = addon.get_file(language)
+            heroes = _read_file(addon.npc_heroes_custom)
+            abilities = _read_file(addon.npc_abilities_custom)
+            english = _read_file(language_file)
+            hero_dump = Hero(heroes, abilities, english, include).parse()
+            _dump(hero_dump, path.join(output_directory, language) + '.json')
